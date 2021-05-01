@@ -19,7 +19,9 @@ At run-time, the package reads the `regex.yml` and compiles a method for each re
 
 ## Package installation
 
-`$> pip install light_text_prepro ` 
+ Download the last `.whl` package from [here](https://github.com/Arfius/light-text-prepro/raw/main/dist/light_text_prepro-0.1.0-py3-none-any.whl)
+
+ `pip install light_text_prepro-{version}-py3-none-any.whl ` 
 
 ## Usage
 
@@ -28,12 +30,12 @@ from light_text_prepro.lprepro import LPrePro
 ...
 obj = LPrePro()
 ...
-result = obj.set_text('@username') \
-		 obj.user_tag(replace_with='[user]').get_text()
-# result is [user]
+result = obj.set_text('Hey @username, this is my email my@email.com') \
+		 obj.user_tag(replace_with='[user]') \
+		 obj.email(replace_with='[email]') \
+    	.get_text()
+# result -> Hey [user], this is my email [email]
 ```
-
-
 
 ### List of Regex 
 
