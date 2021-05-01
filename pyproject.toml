@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "light-text-prepro"
-version = "0.2.2"
+version = "0.2.3"
 description = ""
 authors = ["Alfonso Farruggia <alfarruggia@gmail.com>"]
 

@@ -30,7 +30,7 @@ $> poetry install
 
 ## Package installation
 
- Download the last `.whl` package from [here](https://github.com/Arfius/light-text-prepro/raw/main/dist/light_text_prepro-0.2.2-py3-none-any.whl)
+ Download the last `.whl` package from [here](https://github.com/Arfius/light-text-prepro/raw/main/dist/light_text_prepro-0.2.3-py3-none-any.whl)
 
  `pip install light_text_prepro-{version}-py3-none-any.whl ` 
 

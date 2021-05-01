@@ -1,11 +1,6 @@
-from light_text_prepro import __version__
 from light_text_prepro.lprepro import LPrePro
 
 obj = LPrePro()
-
-
-def test_version():
-    assert __version__ == '0.1.0'
 
 
 def test_unique_function_name():
