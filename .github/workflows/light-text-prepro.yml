@@ -1,4 +1,4 @@
-name: requests-counter
+name: light-text-prepro
 
 on: [push]
 
