@@ -17,12 +17,6 @@ class LPrePro:
         self.__text = re.sub(regex, replace_with, self.__text, flags=re.M | re.I)
         return self
 
-    def _check_unique_function_name(self, dictionary: dict):
-        l_dict = len(dictionary.keys())
-        print(dictionary.keys())
-        if l_dict != len(set(dictionary.keys())):
-            raise ValueError("Regex file containes repeated function names")
-
     def __read_yml(self, file_name: str):
         with open("./light_text_prepro/rules/" + file_name) as file:
             return yaml.load(file, Loader=yaml.FullLoader)

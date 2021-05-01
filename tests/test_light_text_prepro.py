@@ -9,8 +9,8 @@ def test_version():
 
 
 def test_unique_function_name():
-    mock_dict = {'fn1': 'rg1', 'fn1': 'rg2', 'fn1': 'rg3'}
-    obj._check_unique_function_name(mock_dict)
+    mock_dict = read_regex_file()
+    assert len(mock_dict) == len(set(mock_dict))
 
 
 def test_user_tag():
@@ -54,3 +54,15 @@ def test_chain():
         .user_tag(replace_with='[user]')\
         .get_text()
     assert result == "hey [user] this is my [ip]"
+
+
+def read_regex_file():
+    raw_keys = []
+    f = open("./light_text_prepro/rules/regex.yml", "r")
+    while(True):
+        line = f.readline()
+        if not line:
+            break
+        raw_keys.append(line.split(':')[0].strip())
+    f.close
+    return raw_keys
