@@ -24,7 +24,7 @@ jobs:
         poetry install
     - name: Lint with flake8
       run: |
-        flake8 flake8 --max-line-length 200 --ignore=F601,W605
+        flake8 --max-line-length 200 --ignore=F601,W605
     - name: Test with pytest
       run: |
         poetry run pytest
