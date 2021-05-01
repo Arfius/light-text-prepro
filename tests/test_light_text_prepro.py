@@ -47,9 +47,10 @@ def test_multiple_space():
     result = obj.set_text("hello    word").multiple_space().get_text()
     assert result == "helloword"
 
+
 def test_chain():
-    result =  obj.set_text("hey @user this is my 192.122.1.2") \
-		        .ip_address(replace_with='[ip]') \
-		        .user_tag(replace_with='[user]') \
-    	        .get_text()
+    result = obj.set_text("hey @user this is my 192.122.1.2")\
+        .ip_address(replace_with='[ip]')\
+        .user_tag(replace_with='[user]')\
+        .get_text()
     assert result == "hey [user] this is my [ip]"
