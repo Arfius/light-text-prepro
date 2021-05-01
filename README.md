@@ -13,9 +13,11 @@ At run-time, the package reads the `regex.yml` and compiles a method for each re
 ## How to add a regex rules
 
 1. Add a new row into `regex.yml` and make sure to use a unique key for the rule.
-2. Add a `unit tests` under the  `tests` folder and make all test passed.  Use`$> python pytest` to run unit tests.
-3. Update the below section `List of Regex` in the `Readme.st` file  
-4. Create a Pull Request
+2. Install poetry `$> pip install poetry`
+3. Install dependencies `$>poetry install`
+4. Add a `unit tests` under the  `tests` folder and make all test passed.  Use`$> poetry run pytest` to run unit tests.
+5. Update the below section `List of Regex` in the `Readme.md`  
+6. Create a Pull Request
 
 ## Package installation
 
@@ -31,8 +33,8 @@ from light_text_prepro.lprepro import LPrePro
 obj = LPrePro()
 ...
 result = obj.set_text('Hey @username, this is my email my@email.com') \
-		 obj.user_tag(replace_with='[user]') \
-		 obj.email(replace_with='[email]') \
+		 .user_tag(replace_with='[user]') \
+		 .email(replace_with='[email]') \
     	.get_text()
 # result -> Hey [user], this is my email [email]
 ```
@@ -44,7 +46,7 @@ user_tag: '"@[0-9a-z](\.?[0-9a-z])*"'
 email: '"^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$"'
 url: '"(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})"'
 special_chars: '"[-!$%^&*()_+|~=`{}<>?,.\"\[\]:;/\\]"'
-ip_address: '"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"'
+ip_address: '"(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"'
 html_tag: '"^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$"'
 tab_new_line: '"(\n|\t|\r)"'
 multiple_space: '"[ ]+"'
