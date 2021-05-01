@@ -2,6 +2,8 @@
 
 It is an easy-to-use python module that collects regex rules. The package follows the `build design pattern`. You can import it and build a chain of regex that will be applied in cascade to a input text string.
 
+![ci/cd](https://github.com/Arfius/light-text-prepro/actions/workflows/light-text-prepro.yml/badge.svg)
+
 ## How it works
 
 Package reads a list of regex from `light_text_prepro/rules/regex.yml`.  Each row in `regex.yml` file identifies a regex rule, i.e.: `user_tag: '"@[0-9a-z](\.?[0-9a-z])*"'`. In this rule, the `user_tag` is the key of the regex, whereas the `'"@[0-9a-z](\.?[0-9a-z])*"'`is its value .
