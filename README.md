@@ -1,6 +1,6 @@
 # Light Text Pre-processing
 
-It is an easy-to-use python module that collects regex rules. The package follows the `build design pattern`. You can import it and build a chain of regex that will be applied in cascade to a input text string.
+It is an easy-to-use python module that permits to apply a chain of built-in regex rules to a input string.
 
 ![ci/cd](https://github.com/Arfius/light-text-prepro/actions/workflows/light-text-prepro.yml/badge.svg)
 
