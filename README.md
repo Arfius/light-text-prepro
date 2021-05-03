@@ -1,14 +1,14 @@
 # Light Text Pre-processing
 
-It is an easy-to-use python module that permits to apply a chain of built-in regex rules to a input string. Regex rules are stored in a separate YML file and compiled at run-time. How the compiling mechanism and how to add a custom regex are described below.
+` Light Text Pre-processing` is an easy-to-use python module that permits to apply a chain of built-in regex rules to a input string. Regex rules are stored in a separate YML file and compiled at run-time. The compiling mechanism and how to add a custom regex are described below.
 
 ![ci/cd](https://github.com/Arfius/light-text-prepro/actions/workflows/light-text-prepro.yml/badge.svg)
 
 ## How it works
 
-Package reads a list of regex from `light_text_prepro/rules/regex.yml`.  Each row in `regex.yml` file identifies a regex rule, i.e.: `user_tag: '"@[0-9a-z](\.?[0-9a-z])*"'`. In this rule, the `user_tag` is the key of the regex, whereas the `'"@[0-9a-z](\.?[0-9a-z])*"'`is its value .
+Package reads a list of regex from `light_text_prepro/rules/regex.yml`.  Each row in `regex.yml` identifies a regex rule such as `user_tag: '"@[0-9a-z](\.?[0-9a-z])*"'`. In this row, `user_tag` is the `key` of the regex, whereas the `'"@[0-9a-z](\.?[0-9a-z])*"'`is its `value`.
 
-At run-time, the package reads the `regex.yml` and compiles a method for each regex.  At the end of the process you will be able to call the `user_tag()`method. 
+At run-time, the package reads the `regex.yml` and compiles a method for each regex, the method is named as the the `key` of the row. For example, at the end of the process, you will be able to call the `user_tag()`method, that permit to match the user tagged. Each method has the optional parameter `replace_with` that allow you to replace the string matched by regex rule with an arbitrary text.
 
 ## How to add a regex rules
 
