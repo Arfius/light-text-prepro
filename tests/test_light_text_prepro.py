@@ -50,12 +50,14 @@ def test_chain():
         .get_text()
     assert result == "hey [user] this is my [ip]"
 
-def test_chain():
-    result = obj.set_text('Hey @username, this is my email my@email.com') \
-		.user_tag(replace_with='[user]') \
-		.email(replace_with='[email]') \
-    	.get_text()
+
+def test_chain_with_email():
+    result = obj.set_text('Hey @username, this is my email my@email.com')\
+        .user_tag(replace_with='[user]')\
+        .email(replace_with='[email]')\
+        .get_text()
     assert result == "Hey [user], this is my email [email]"
+
 
 def read_regex_file():
     raw_keys = []

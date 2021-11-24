@@ -3,7 +3,6 @@ import re
 import os
 
 
-
 class LPrePro:
     def __init__(self):
         self.__text = None
