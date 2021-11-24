@@ -10,12 +10,30 @@ Package reads a list of regex from `light_text_prepro/rules/regex.yml`.  Each ro
 
 At run-time, the package reads the `regex.yml` and compiles a method for each regex, the method is named as the the `key` of the row. For example, at the end of the process, you will be able to call the `user_tag()`method, that permit to match the user tagged. Each method has the optional parameter `replace_with` that allow you to replace the string matched by regex rule with an arbitrary text.
 
+### List of Regex 
+
+```yaml
+user_tag: '"@[0-9a-z](\.?[0-9a-z])*"'
+email: '"^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$"'
+url: '"(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})"'
+special_chars: '"[-!$%^&*()_+|~=`{}<>?,.\"\[\]:;/\\]"'
+ip_address: '"(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"'
+html_tag: '"^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$"'
+tab_new_line: '"(\n|\t|\r)"'
+multiple_space: '"[ ]+"'
+```
+If you are happy wiht the list above, you can install the package via pip.
+```
+pip install light-text-prepro
+```
+Otherwise, if you want to contribute to enrich the package adding your regex rule, please follow section below.
+
 ## How to add a regex rules
 
 ### Setup project
 
 ````
-$> git clone https://github.com/Arfius/light-text-prepro.git
+$> pip install 
 $> cd light-text-prepro
 $> pip install poetry flake8
 $> poetry install
@@ -48,16 +66,5 @@ result = obj.set_text('Hey @username, this is my email my@email.com') \
 # result -> Hey [user], this is my email [email]
 ```
 
-### List of Regex 
 
-```yaml
-user_tag: '"@[0-9a-z](\.?[0-9a-z])*"'
-email: '"^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$"'
-url: '"(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})"'
-special_chars: '"[-!$%^&*()_+|~=`{}<>?,.\"\[\]:;/\\]"'
-ip_address: '"(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"'
-html_tag: '"^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$"'
-tab_new_line: '"(\n|\t|\r)"'
-multiple_space: '"[ ]+"'
-```
 
