@@ -1,5 +1,7 @@
 import yaml
 import re
+import os
+
 
 
 class LPrePro:
@@ -18,7 +20,7 @@ class LPrePro:
         return self
 
     def __read_yml(self, file_name: str):
-        with open("./light_text_prepro/rules/" + file_name) as file:
+        with open(f"{os.path.dirname(os.path.realpath(__file__))}/rules/" + file_name) as file:
             return yaml.load(file, Loader=yaml.FullLoader)
 
     def set_text(self, text: str):
