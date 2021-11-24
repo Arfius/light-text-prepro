@@ -33,7 +33,7 @@ Otherwise, if you want to contribute to enrich the package adding your regex rul
 ### Setup project
 
 ````
-$> pip install 
+$> git clone https://github.com/Arfius/light-text-prepro.git
 $> cd light-text-prepro
 $> pip install poetry flake8
 $> poetry install
