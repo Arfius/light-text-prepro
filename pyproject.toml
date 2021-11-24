@@ -1,8 +1,19 @@
 [tool.poetry]
 name = "light-text-prepro"
-version = "0.2.3"
-description = ""
-authors = ["Alfonso Farruggia <alfarruggia@gmail.com>"]
+version = "0.2.4"
+description = "Light Text Pre-processing permits to apply a chain of built-in regex rules to a input string."
+authors = ["Alfonso Farruggia"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/Arfius/light-text-prepro"
+repository = "https://github.com/Arfius/light-text-prepro"
+keywords = ["pre processing", "regex", "nlp"]
+include = [
+    "LICENSE",
+]
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/Arfius/light-text-prepro/issues"
 
 [tool.poetry.dependencies]
 python = "^3.6"
@@ -15,3 +26,5 @@ pytest = "^5.2"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+

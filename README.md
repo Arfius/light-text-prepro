@@ -1,6 +1,6 @@
 # Light Text Pre-processing
 
-` Light Text Pre-processing` is an easy-to-use python module that permits to apply a chain of built-in regex rules to a input string. Regex rules are stored in a separate YML file and compiled at run-time. The compiling mechanism and how to add a custom regex are described below.
+`Light Text Pre-processing` is an easy-to-use python module that permits to apply a chain of built-in regex rules to a input string. Regex rules are stored in a separate YML file and compiled at run-time. The compiling mechanism and how to add a custom regex are described below.
 
 ![ci/cd](https://github.com/Arfius/light-text-prepro/actions/workflows/light-text-prepro.yml/badge.svg)
 
