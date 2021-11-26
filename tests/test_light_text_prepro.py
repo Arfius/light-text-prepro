@@ -19,7 +19,7 @@ def test_email():
 
 
 def test_special_chars():
-    result = obj.set_text("-!$%^&*()_+|~=`{}\[\]:").special_chars().get_text()
+    result = obj.set_text("$%^&*_+|~=<>:;\\").special_chars().get_text()
     assert result == ""
 
 
@@ -58,6 +58,25 @@ def test_chain_with_email():
         .get_text()
     assert result == "Hey [user], this is my email [email]"
 
+
+def test_puntuation():
+    result = obj.set_text('Hey, my name is Jo!')\
+        .punctuation()\
+        .get_text()
+    assert result == "Hey my name is Jo"
+
+
+def test_parentheses():
+    result = obj.set_text('[]{}()')\
+        .parentheses()\
+        .get_text()
+    assert result == ""
+
+def test_emoji():
+    result = obj.set_text('😀😀🤦🏾\u200d♂️🤣🤣🤣😔😔🤣😔 free music')\
+        .emoji()\
+        .get_text()
+    assert result == " free music"
 
 def read_regex_file():
     raw_keys = []

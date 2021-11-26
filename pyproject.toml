@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "light-text-prepro"
-version = "0.3.1"
+version = "0.3.4"
 description = "Light Text Pre-processing permits to apply a chain of built-in regex rules to a input string."
 authors = ["Alfonso Farruggia"]
 license = "MIT"

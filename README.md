@@ -14,14 +14,17 @@ At run-time, the package reads the `regex.yml` and compiles a method for each re
 
 ### List of Regex 
 ```yaml
-user_tag: '"@[0-9a-z](\.?[0-9a-z])*"'
-email: '"^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$"'
+user_tag: '"(?<![\w@])@([\w@]+(?:[.!][\w@]+)*)"'
+email: '"([^@|\s]+@[^@]+\.[^@|\s]+)"'
 url: '"(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})"'
-special_chars: '"[-!$%^&*()_+|~=`{}<>?,.\"\[\]:;/\\]"'
+punctuation: '"[-!`?,.\":;]"'
+parentheses: '"[\[\]{}()]"'
+special_chars: '"[$%^&*_+|~=<>:;\\]"'
 ip_address: '"(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"'
 html_tag: '"^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$"'
 tab_new_line: '"(\n|\t|\r)"'
 multiple_space: '"[ ]+"'
+emoji: '"[^\u1F600-\u1F6FF\s]"'
 ```
 
 If you are happy wiht the list above, you can install the package via pip.
