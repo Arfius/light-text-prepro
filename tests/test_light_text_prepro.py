@@ -72,11 +72,13 @@ def test_parentheses():
         .get_text()
     assert result == ""
 
+
 def test_emoji():
     result = obj.set_text('😀😀🤦🏾\u200d♂️🤣🤣🤣😔😔🤣😔 free music')\
         .emoji()\
         .get_text()
     assert result == " free music"
+
 
 def read_regex_file():
     raw_keys = []
