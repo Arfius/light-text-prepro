@@ -18,6 +18,11 @@
     <img src="https://img.shields.io/pypi/pyversions/light-text-prepro.svg?color=%2334D058" alt="Supported Python versions">
 </a>
 </p>
+<p align="center">
+  <a target="_blank"  href="https://twitter.com/alfarruggia">
+    <img src="https://img.shields.io/twitter/follow/alfarruggia"/>
+  </a>
+</p>
 
 ## How it works
 
