@@ -22,6 +22,8 @@ jobs:
         python -m pip install pytest flake8 
         pip install poetry
         poetry install
+    - name: Update pytest
+      run: pip install -U pytest
     - name: Lint with flake8
       run: |
         flake8 --max-line-length 200 --ignore=F601,W605
