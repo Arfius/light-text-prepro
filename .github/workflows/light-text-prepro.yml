@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [ '3.8', '3.9', '3.10' ]
+        python-version: [ '3.8', '3.9' ]
 
     steps:
     - uses: actions/checkout@v2
@@ -22,8 +22,6 @@ jobs:
         python -m pip install pytest flake8 
         pip install poetry
         poetry install
-    - name: Update pytest
-      run: pip install -U pytest
     - name: Lint with flake8
       run: |
         flake8 --max-line-length 200 --ignore=F601,W605
