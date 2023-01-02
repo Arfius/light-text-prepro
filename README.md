@@ -17,6 +17,11 @@
 <a href="https://pypi.org/project/light-text-prepro" target="_blank">
     <img src="https://img.shields.io/pypi/pyversions/light-text-prepro.svg?color=%2334D058" alt="Supported Python versions">
 </a>
+
+<a href="https://pepy.tech/project/light-text-prepro" target="_blank">
+    <img src="https://static.pepy.tech/badge/light-text-prepro" alt="Total Downloads">
+</a>
+
 </p>
 <p align="center">
   <a target="_blank"  href="https://twitter.com/alfarruggia">
