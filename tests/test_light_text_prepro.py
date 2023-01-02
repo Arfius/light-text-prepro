@@ -9,12 +9,14 @@ def test_unique_function_name():
 
 
 def test_user_tag():
-    result = obj.set_text('@username').user_tag(replace_with='[user]').get_text()
+    result = obj.set_text('@username').user_tag(replace_with='[user]')\
+                                      .get_text()
     assert result == "[user]"
 
 
 def test_email():
-    result = obj.set_text('my@email.com').email(replace_with='[email]').get_text()
+    result = obj.set_text('my@email.com').email(replace_with='[email]')\
+                                         .get_text()
     assert result == "[email]"
 
 
@@ -83,7 +85,7 @@ def test_emoji():
 def read_regex_file():
     raw_keys = []
     f = open("./light_text_prepro/rules/regex.yml", "r")
-    while(True):
+    while (True):
         line = f.readline()
         if not line:
             break
